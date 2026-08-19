@@ -23,26 +23,34 @@ content needed here beyond what those two already carry.
 
 ## 2. Hacker News
 
-**Title:** Show HN: OpenVideoStudio – a local-first AI video studio that
-runs on a 6GB GPU
+**Title:** I built an open-source AI video studio on a 6GB RTX 3060
+laptop — now I'm opening it to everyone
 
 **Post body** (Show HN posts are typically just a link + the poster
 commenting in the thread, but here's the opening comment to post
 immediately after submitting, which is standard HN practice):
 
-> Hi HN — I built OpenVideoStudio, a pipeline that turns one text prompt
-> into a fully edited, narrated, subtitled video: script → storyboard →
+> Hi HN — I built this on a laptop with an RTX 3060 6GB GPU, not a
+> rented A100. Paying per-generation credits just to experiment wasn't
+> realistic for me, and the hardware itself isn't especially powerful
+> either — so instead of buying more compute, I built the workflow to
+> actually run end-to-end on what I already had.
+>
+> OpenVideoStudio is a pipeline that turns one text prompt into a fully
+> edited, narrated, subtitled video: script → storyboard →
 > character/environment identity → keyframes → video clips → narration →
 > subtitles → automated edit.
 >
-> It runs on local models (Ollama + ComfyUI/SDXL/LTX-Video) on my own
-> 6GB RTX 3060 laptop — see `docs/HARDWARE.md` in the repo for exactly
-> what's tested vs. expected vs. unknown, since I'd rather under-claim
-> than have someone's install fail on a claim I didn't actually verify.
-> One thing I want to be upfront about: default narration uses
-> Microsoft's Edge TTS, which is a cloud call — everything else in the
-> pipeline is local, and that's the one exception, disclosed in the
-> README, not buried.
+> It runs on local models (Ollama + ComfyUI/SDXL/LTX-Video) on that same
+> 6GB laptop — see `docs/HARDWARE.md` in the repo for exactly what's
+> tested vs. expected vs. unknown, since I'd rather under-claim than have
+> someone's install fail on a claim I didn't actually verify. One thing
+> I want to be upfront about: default narration uses Microsoft's Edge
+> TTS, which is a cloud call — everything else in the pipeline is local,
+> and that's the one exception, disclosed in the README, not buried.
+> That constraint is also part of why it's "local-first," not "fully
+> local" — I'd rather say that plainly than let "local" imply more than
+> what's true.
 >
 > The provider layer (LLM/image/video/TTS) is a set of swappable
 > interfaces — adding a new one is one file plus a two-line registration,
@@ -50,7 +58,9 @@ immediately after submitting, which is standard HN practice):
 > scoped work I didn't build myself on purpose — Linux/macOS support, an
 > OpenAI-compatible provider, character-consistency research, a timeline
 > editor — see `docs/COMMUNITY_TRACKS.md` if any of that's your kind of
-> problem.
+> problem. It's still genuinely unfinished in real places — character
+> identity drifts across scenes more than I'd like — I'd rather open
+> that up now than keep building it alone behind a closed door.
 >
 > Repo: {REPO_URL}
 >
@@ -118,7 +128,10 @@ off that
 > environment identity in its own focused call before touching any image
 > model. Provider selection is genuinely config-driven (verified by
 > tests, not just claimed) — swapping the LLM provider doesn't touch
-> pipeline code.
+> pipeline code. (Built and tested on a 6GB RTX 3060 laptop, for the same
+> reason a lot of this community cares about local models in the first
+> place: paying per-generation credits just to experiment wasn't
+> realistic for me, so the constraint became the design brief.)
 
 **Short version:** "Local-first AI video pipeline — Ollama does script/
 storyboard/identity generation, ComfyUI does the visuals. Open source,
@@ -144,6 +157,13 @@ built with real community contribution tracks, not just a code dump
 > five-rung earned-trust model (Contributor → Trusted Contributor →
 > Reviewer → Maintainer → Core Maintainer); sponsorship, when it's
 > eventually activated, explicitly can't buy any of those rungs.
+>
+> I built the core of this alone, on a 6GB laptop GPU, without an AI
+> budget beyond what that laptop can do — paying for generation credits
+> just to experiment wasn't realistic for me. That's part of why the
+> contribution model matters as much to me as the code: I don't want
+> this to stay one person's project, and I'd like the Contributors page
+> to eventually have more than one name on it.
 
 **Short version:** "New Apache-2.0 AI video project with real, scoped
 community contribution tracks and an earned-trust governance model —
@@ -158,9 +178,10 @@ if you want to see exactly what's open before you look at any code."
 
 **Thread (5 posts):**
 
-1. I built a local-first AI video studio: one prompt → script →
-   storyboard → keyframes → clips → narration → subtitles → final video.
-   Runs on my own 6GB RTX 3060 laptop. Open-sourcing it today.
+1. I built OpenVideoStudio on a laptop with an RTX 3060 6GB GPU — not a
+   rented A100, and not an unlimited generation-credit budget either.
+   One prompt → script → storyboard → keyframes → clips → narration →
+   subtitles → final video. Open-sourcing it today.
    🧵
 2. [demo clip embedded here]
 3. The pipeline generates a canonical character + environment identity
@@ -178,11 +199,12 @@ if you want to see exactly what's open before you look at any code."
    43 seeded issues: {REPO_URL}
 
 **Short version (single post, if a thread isn't the right format):** "I
-built a local-first AI video studio that runs on a 6GB RTX 3060 —
-prompt → full edited video, open source. One disclosed exception: default
-narration is a cloud call (Edge TTS), everything else stays on-device.
-Looking for contributors on the parts I left unbuilt on purpose.
-{REPO_URL}"
+built a local-first AI video studio on a 6GB RTX 3060 laptop — paying
+per-generation credits to experiment wasn't realistic for me, so I built
+the workflow instead. Prompt → full edited video, open source. One
+disclosed exception: default narration is a cloud call (Edge TTS),
+everything else stays on-device. Looking for contributors on the parts
+I left unbuilt on purpose. {REPO_URL}"
 
 **CTA:** repo link on the last post, pinned reply with the Discussions
 link once live.
@@ -193,8 +215,8 @@ link once live.
 
 ## 5. YouTube
 
-**Video title:** "I Built an Open-Source, Local-First AI Video Studio
-(6GB GPU)"
+**Video title:** "I Built an Open-Source AI Video Studio on a 6GB RTX
+3060 Laptop — Now I'm Opening It to Everyone"
 
 **Description (opening paragraph):**
 
@@ -205,8 +227,12 @@ link once live.
 > project is built and tested on. Script, storyboard, identity, keyframes,
 > and clips all run on that local GPU; the one disclosed exception is
 > default narration, which uses a cloud TTS call (Edge TTS) — covered at
-> [timestamp] below. It's open source (Apache-2.0) and actively looking
-> for contributors — timestamps and links below.
+> [timestamp] below. I built this alone, without an AI budget beyond what
+> that laptop can do — paying per-generation credits just to experiment
+> wasn't realistic for me, so I built the workflow instead of buying more
+> compute. It's open source (Apache-2.0), still genuinely unfinished in
+> real places (character consistency, the editor, Linux/macOS support),
+> and actively looking for contributors — timestamps and links below.
 
 **Short version (for the video's own hook, first 10 seconds):** "This
 entire video — script to final cut — was generated by a prompt, on a
@@ -229,12 +255,14 @@ production time than the README's short hero demo.
 > OpenVideoStudio 把一句提示词变成一部完整的视频：剧本、分镜、角色/场景
 > 一致性设定、AI 生成关键帧和视频片段、配音、字幕，全部自动完成。这期视频
 > 展示了一次真实的完整生成过程，就在项目开发和测试所用的同一台 6GB 显存
-> 笔记本显卡上跑的。项目开源（Apache-2.0 协议），正在寻找贡献者——链接和
-> 时间戳见简介。
+> 笔记本显卡上跑的。整个项目是我一个人做出来的——持续为每次生成付费做实验
+> 对我来说不现实，所以干脆把这套工作流自己搭出来，而不是靠买更多算力解决
+> 问题。项目开源（Apache-2.0 协议），正在寻找贡献者——链接和时间戳见简介。
 
-**Short version:** "从一句提示词到成片，剧本、分镜、关键帧、视频片段都由这个
-我今天开源的软件在一台笔记本显卡上本地生成完成；唯一的例外是默认配音走的是
-云端的 Edge TTS，仓库里写清楚了。"
+**Short version:** "一个人在 6GB 显存笔记本上做出来的开源 AI 视频工作流，
+不是靠算力堆出来的，而是被'没有无限预算'这个限制逼出来的设计。剧本、分镜、
+关键帧、视频片段都在本地生成完成；唯一的例外是默认配音走的是云端的
+Edge TTS，仓库里写清楚了。"
 
 **CTA:** "完整安装指南和源码：{REPO_URL}"
 
@@ -249,7 +277,9 @@ narration/subtitles, links `README_CN.md`.
 
 **开头段落（偏技术、低废话，匹配 V2EX 的技术社区调性）:**
 
-> 做了几个月，今天开源。核心流程：提示词 → LLM 生成剧本和分镜（Ollama）→
+> 做了几个月，今天开源。一个人在 6GB 显存笔记本（RTX 3060）上做的，没有
+> 额外算力预算，能不能在现有硬件上把整条流程跑通，是最早的出发点。核心
+> 流程：提示词 → LLM 生成剧本和分镜（Ollama）→
 > 生成一次性的角色/场景一致性设定 → SDXL Lightning 生成关键帧 → LTX-Video
 > 生成视频片段 → Edge TTS 配音 → 字幕 → FFmpeg 自动剪辑合成。剧本、分镜、
 > 关键帧、视频片段这几步全部在本地跑，6GB 显存笔记本卡（RTX 3060）验证
@@ -274,17 +304,34 @@ Apache-2.0 开源，欢迎贡献。"
 
 **开头段落（更长的叙事空间，适合讲"为什么"）:**
 
+> 先说说为什么做这个。我没有什么昂贵的 GPU，也没有充裕的 AI 预算——手头
+> 就是一台 RTX 3060 6GB 显存的笔记本。现在市面上有不少效果惊艳的 AI 视频
+> 工具，但每一次生成、每一次失败重试都是真金白银的成本，持续花钱去做实验
+> 对我来说不现实，而且我的硬件本身也算不上强。与其靠"多买算力"解决问题，
+> 我就干脆把这套工作流自己搭出来：先解决"能不能在我现有这台机器上把整条
+> 流程真正跑通"这个问题。
+>
 > 这篇文章聊聊 OpenVideoStudio 这个项目——一个把提示词自动变成完整视频的
 > 开源流水线，以及做的过程中踩过的一些坑：比如角色一致性问题最早是靠 LLM
 > 每个分镜重新描述角色外貌来维持的，实际效果会随着分镜数量增多而漂移，后来
 > 改成用一次独立的 LLM 调用生成结构化的角色/场景设定，用代码而不是 LLM 来
-> 保证每个分镜拿到的描述文本完全一致，这个改动明显改善了角色一致性。再比如
-> 6GB 显存下如何避免 Ollama、SDXL、LTX-Video 同时占用显存导致 OOM……
+> 保证每个分镜拿到的描述文本完全一致，这个改动明显改善了角色一致性——但没
+> 有完全解决：即使每个分镜拿到的文字描述完全一样，SDXL Lightning 在低步数
+> 下也不总能把相同的文字变成视觉上同一张脸，这一点在项目自带的 demo 里就
+> 如实展示了出来，也是角色一致性还需要继续打磨的地方。再比如 6GB 显存下
+> 如何避免 Ollama、SDXL、LTX-Video 同时占用显存导致 OOM……
+>
+> 项目现在还远谈不上完成——角色一致性还需要改进、更多 provider 待接入、
+> 编辑器还只是设计稿、Linux/macOS 支持也还不够好。与其一个人关起门来慢慢
+> 磨，不如现在开放出来，让更多和我一样没有无限 GPU、没有无限 API 预算的
+> 开发者、创作者一起参与进来。
 
-**Short version:** "开源 AI 视频生成工具的技术选型和踩坑记录，包括角色一致性
-和 6GB 显存下的显存调度问题。"
+**Short version:** "一个人在 6GB 显存笔记本上做的开源 AI 视频生成工具，
+聊聊技术选型和踩坑记录，包括角色一致性和显存调度问题，以及为什么现在选择
+把它开放出来。"
 
-**CTA:** "项目地址：{REPO_URL}，欢迎讨论和贡献。"
+**CTA:** "项目地址：{REPO_URL}，欢迎讨论和贡献——希望有一天 Contributors
+页面上不只有我一个名字。"
 
 **Timing:** week 1–2, can follow the initial launch wave once there's
 something to reference back to.
@@ -302,6 +349,10 @@ something to reference back to.
 > 只需要写一个新文件加 registry.py 里两行注册，pipeline 代码本身不用改。
 > 具体使用哪个 provider 完全由 config.toml 驱动，这一点专门写了测试验证——
 > 早期版本这里其实是写死在代码里的，被独立审查发现后改成了配置驱动。
+>
+> Provider 抽象是我一个人在 6GB 显存笔记本上做这个项目时，为了不把自己
+> 逼死在硬编码里而定下的设计原则，现在开源出来也是希望有更多人一起把这层
+> 接口做完整。
 
 **Short version:** "AI 视频生成项目的 Provider 抽象层设计实战，配置驱动而非
 硬编码的具体实现方式。"
@@ -331,3 +382,15 @@ was done, not a standing guarantee — re-run your own scan for "local" /
 "cloud" / "offline" / 本地 / 云端 / 离线 across this file before actually
 posting anything, since it's easy for a future edit to reintroduce the
 same gap.
+
+A founder-story pass was added after the above (6GB RTX 3060 laptop,
+built without a large AI budget, opening it up rather than building it
+alone) across every channel and `README.md`/`README_CN.md`. It was held
+to the same rules the rest of this file is: "local-first," not "fully
+local"; the 6GB RTX 3060 claim used only because `docs/HARDWARE.md`
+actually verifies it; no claim that character consistency is solved; no
+claim the project is finished — unfinished areas (character consistency,
+more providers, the editor, Linux/macOS) are named as open contribution
+opportunities, not glossed over or presented as done. Sincere and
+specific, not a fundraising pitch and not pity-seeking — no mention of
+sponsorship or donations anywhere in the story itself.

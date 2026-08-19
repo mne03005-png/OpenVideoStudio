@@ -88,8 +88,34 @@ Announcements, Ideas, Show and Tell, Model Providers, AI Art, Research,
 Help, General
 ```
 
-Post one pinned "Welcome" announcement linking `README.md`,
+Post one pinned "Welcome" announcement (draft below) linking `README.md`,
 `CONTRIBUTING.md`, and the track selector.
+
+**Draft:**
+
+> ## Welcome to OpenVideoStudio
+>
+> I built this alone, on a laptop with an RTX 3060 6GB GPU — not a
+> rented A100, and not an unlimited generation-credit budget. Paying per
+> attempt just to experiment wasn't realistic for me, so instead of
+> buying more compute, I built the workflow: prompt → script →
+> storyboard → keyframes → clips → narration → subtitles → assembled
+> video, made to actually run on the machine I already had.
+>
+> It's genuinely unfinished in real places — character identity drifts
+> across scenes more than I'd like (see `examples/hero_demo/` for the
+> honest disclosure), the editor is still spec-only, Linux/macOS support
+> isn't there yet. See `docs/COMMUNITY_TRACKS.md` for the full list of
+> what's open.
+>
+> I didn't want this to stay something one person keeps building behind
+> a closed door. If you find a bug, open an Issue. If you have an idea,
+> start a thread here. If you can improve even one small part, send a
+> PR — see `CONTRIBUTING.md`. You don't need to be
+> an AI expert — a small fix can make this easier for the next person
+> who only has an ordinary computer and still wants to make something.
+>
+> Glad you're here.
 
 ## 6. Seed the issues
 
@@ -125,6 +151,10 @@ the GitHub UI before assuming the rest went cleanly.
 >
 > Full install guide: `docs/INSTALL.md`. Want to contribute? Start at
 > `docs/ISSUES_SEED.md`.
+
+The "why" behind this project — built alone on a 6GB laptop GPU, opened
+up rather than kept behind a closed door — is in the README's "Why I
+built this" section, not repeated here; release notes stay factual.
 
 Do not mark this a "Latest Release" until the hero demo is embedded in
 the README that ships with the tag — a release without its own headline

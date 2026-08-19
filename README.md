@@ -114,6 +114,32 @@ turning your own personal photo/video library into an edited montage —
 built on the same shared FFmpeg/audio/scoring core as the AI Creation
 pipeline.
 
+## Why I built this
+
+I didn't start OpenVideoStudio with access to expensive GPUs or a large
+AI budget — the opposite. My main machine is a laptop with an RTX 3060
+6GB GPU (see [`docs/HARDWARE.md`](docs/HARDWARE.md) for exactly what's
+verified on it, not just claimed). Paying per-generation credits just to
+experiment wasn't something I could keep doing indefinitely, and the
+hardware itself isn't particularly powerful either. So instead of
+solving the problem with more compute, I built the workflow: prompt →
+script → storyboard → keyframes → clips → narration → subtitles →
+assembled video, made to actually run end-to-end on the machine I
+already had.
+
+It's still far from finished. Character identity drifts across scenes
+more than I'd like — see the hero demo's own disclosure above and
+[Track C](docs/COMMUNITY_TRACKS.md#track-c--character-consistency), the
+open track that exists specifically to fix this. More providers need
+integrating, the editor is still spec-only, and Linux/macOS support
+isn't there yet. Rather than keep building all of that alone behind a
+closed door, I'd rather open it now — to developers, creators, and
+researchers, especially anyone else working without unlimited GPUs or
+API budgets. Found a bug? Open an issue. Have an idea? Start a
+Discussion. Can fix even one small thing? Send a PR — see
+[`CONTRIBUTING.md`](CONTRIBUTING.md). I'd like the Contributors page to
+eventually have more than one name on it.
+
 ## Want to help build OpenVideoStudio?
 
 The core pipeline is maintainer-led and tested. Everything past that is a
