@@ -1,0 +1,93 @@
+# OpenVideoStudio configuration
+
+[output]
+width = 1920
+height = 1080
+fps = 25                    # matches an earlier private prototype's proven setting
+target_duration_seconds = 180   # Week-1 acceptance target: 3 minutes
+
+[encode]
+# h264_nvenc + preset p5 confirmed proven on RTX 3060 Laptop 6GB across
+# several earlier private prototypes
+codec = "h264_nvenc"
+preset = "p5"
+pix_fmt = "yuv420p"
+bitrate = "10M"              # highest-quality proven setting; other prototypes used 8M
+maxrate = "13M"
+bufsize = "20M"
+audio_codec = "aac"
+audio_bitrate = "192k"
+audio_samplerate = 48000
+audio_channels = 2
+faststart = true              # present in only one of several earlier prototypes; standardized here
+
+[scan]
+image_extensions = [".jpg", ".jpeg", ".png", ".heic", ".webp", ".bmp"]
+video_extensions = [".mp4", ".mov", ".m4v", ".mkv", ".avi", ".wmv"]
+
+[score]
+# Laplacian-variance sharpness: no proven value existed in any earlier
+# private prototype (dead code there never actually scored anything) —
+# these are new, conservative starting thresholds for Week 1.
+sharpness_low = 30.0
+sharpness_high = 300.0
+brightness_low = 25.0
+brightness_high = 235.0
+duplicate_hash_distance = 5
+burst_window_seconds = 2.0
+temporal_cluster_gap_minutes = 30
+
+[plan]
+chapter_gap_hours = 6.0
+shot_duration_min = 2.5
+shot_duration_base = 4.0
+shot_duration_max = 7.0
+shot_duration_chapter_edge_bonus = 1.5
+video_max_seconds = 8.0
+
+[kenburns]
+# baseline zoom-in plus variant camera modes, carried over from earlier
+# private prototypes
+zoom_increment = 0.0008
+zoom_max = 1.12
+pan_px_per_frame = 2
+
+[crop]
+# proven center-crop-to-16:9 math, carried over from an earlier private prototype
+target_ratio = 1.7777777778   # 16/9
+jpeg_quality = 95
+
+[audio]
+original_volume = 1.0
+bgm_volume = 0.25             # carried over from an earlier private prototype
+fade_seconds = 2.0
+amix_dropout_transition = 3   # carried over from an earlier private prototype
+
+[ui]
+theme = "soft"
+default_style = "Family Memory"
+styles = ["Family Memory", "Travel Documentary"]
+
+[providers]
+# V0.1: Ollama chosen specifically so the first runnable version of
+# OpenVideoStudio doesn't require a paid API key. Model name is
+# configurable here on purpose — never hardcode it in creative/*.py.
+# Future providers (deepseek/claude/openai/gemini/grok/...) register in
+# providers/registry.py without any creative-pipeline code changes.
+llm = "ollama"
+ollama_model = "qwen3:8b"
+# If a system-wide Ollama instance is already running with OLLAMA_MODELS
+# pointed somewhere you can't change (env vars on an already-running
+# process can't be updated without a restart, and you may not have
+# permission to restart it), run a second instance on a different port
+# with OLLAMA_MODELS set explicitly, and point ollama_server there instead
+# of fighting env propagation on the default instance.
+ollama_server = "http://127.0.0.1:11434"
+image = "comfyui_sdxl"
+video = "comfyui_ltx"
+tts = "edge_tts"
+
+[creative]
+aspect_ratio = "9:16"          # 448x768 — proven on 6GB VRAM, see docs/HARDWARE.md
+default_style = "cinematic sci-fi"
+default_language = "en"

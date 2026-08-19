@@ -1,0 +1,13 @@
+# Sponsorship is PREPARED, not ACTIVATED — every line below is commented
+# out on purpose. Do not uncomment/fill these in without explicit
+# maintainer approval — see docs/OPEN_SOURCE_LAUNCH_STRATEGY.md.
+#
+# github: [ORG_OR_USERNAME]
+# open_collective: openvideostudio
+# custom: ["https://example.com/sponsor"]
+
+# Planned tiers (not yet configured on any platform):
+#   Supporter, Contributor Supporter, Project Sponsor, Organization Sponsor
+# Planned funding uses: GPU testing, CI, model integration, platform
+# compatibility, documentation, community maintenance.
+# Principle: sponsorship never buys governance — see GOVERNANCE.md.

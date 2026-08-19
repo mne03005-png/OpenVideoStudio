@@ -1,0 +1,35 @@
+# Environment / secrets
+studio/.env
+.env
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Model weights and other large binary assets — never committed, see
+# docs/PUBLIC_REPOSITORY_PLAN.md's model file policy
+*.safetensors
+*.gguf
+*.ckpt
+*.tflite
+*.onnx
+*.pt
+*.pth
+Models/
+ComfyUI/
+
+# Generated run output
+studio/runs/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local tooling config (not project content)
+.claude/

@@ -1,0 +1,27 @@
+# Minimum versions actually tested, not exact pins (>=, not ==) - a
+# newer compatible version will satisfy these but isn't independently
+# verified, and pip is free to resolve higher. Not fully reproducible
+# across installs; if that turns out to matter in practice, switch to
+# exact == pins or a lockfile instead of just relaxing this comment.
+#
+# Plain ASCII only in this file: pip's requirements-file encoding
+# detection falls back to the OS locale codec (e.g. GBK on Chinese
+# Windows) when there's no BOM/declared encoding, and a non-ASCII
+# character here breaks `pip install -r requirements.txt` outright on
+# such systems - confirmed by hitting this exact UnicodeDecodeError
+# during a fresh-install verification pass.
+requests>=2.34.2
+gradio>=6.24.0
+python-dotenv>=1.2.2
+Pillow>=11.3.0
+opencv-python>=5.0.0.93
+numpy>=2.4.6
+ImageHash>=4.3.2
+mediapipe>=0.10.35
+librosa>=0.11.0
+ExifRead>=3.5.1
+pymediainfo>=7.0.1
+edge-tts>=7.2.8
+
+# dev/test only
+pytest>=9.1.1
