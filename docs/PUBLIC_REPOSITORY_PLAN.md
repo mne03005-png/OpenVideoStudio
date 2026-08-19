@@ -45,7 +45,10 @@ OpenVideoStudio/
 │   │   ├── image/comfyui_sdxl.py
 │   │   ├── video/comfyui_ltx.py
 │   │   └── tts/edge_tts_provider.py
-│   └── tests/                  # 54 tests, all passing in the candidate copy
+│   └── tests/                  # full test suite, all passing (run
+│                               # `python -m pytest tests/ -q` to see the
+│                               # current count — not stated here since
+│                               # it changes with every test added)
 ├── docs/                       # this document and its siblings
 ├── examples/                   # sample prompts/config (see below)
 ├── presets/                    # empty at launch — style/preset library,

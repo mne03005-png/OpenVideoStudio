@@ -82,11 +82,13 @@ here, since this document has previously gone stale between updates.
 ## Independent review
 
 This candidate has been reviewed multiple times by an independent
-reviewer with no access to this document's claims in advance, specifically
-including review of this document's and the security audit's own
-accuracy, not just the code. That process has repeatedly found real
-issues in what looked like a finished draft — including issues in this
-checklist itself. Given that track record, the honest position is: this
+reviewer, who reads what this project's status notes claim and then
+independently re-derives every claim against the actual repository
+rather than accepting the narrative — specifically including review of
+this document's and the security audit's own accuracy, not just the
+code. That process has repeatedly found real issues in what looked like
+a finished draft — including issues in this checklist itself. Given that
+track record, the honest position is: this
 document reflects genuine verification at the time it was last updated,
 not a guarantee that a further independent pass would find nothing. A
 final independent pass with no open findings, immediately before

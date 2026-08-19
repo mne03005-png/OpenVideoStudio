@@ -183,13 +183,14 @@ if __name__ == "__main__":
 
     from providers.llm.ollama_provider import OllamaProvider
     from creative.script import generate_script
+    from providers._config_utils import default_ollama_model
 
     parser = argparse.ArgumentParser(description="Generate a storyboard from a prompt (runs script.py first)")
     parser.add_argument("prompt")
     parser.add_argument("--duration", type=float, default=15.0)
     parser.add_argument("--style", default="cinematic sci-fi")
     parser.add_argument("--language", default="en")
-    parser.add_argument("--model", default="qwen3:8b")
+    parser.add_argument("--model", default=default_ollama_model())
     args = parser.parse_args()
 
     llm = OllamaProvider(model=args.model)

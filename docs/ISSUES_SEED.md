@@ -118,7 +118,7 @@ Expected result, Acceptance criteria, How to test.
 
 ---
 
-## Help Wanted (20)
+## Help Wanted (28)
 
 ### Art Studio (Track A)
 11. **[Art Studio] Character Bible data model** — `character-consistency`, `art-studio`. Structured, versioned schema for multiple characters per story (today's `identity.py` supports exactly one). See `docs/COMMUNITY_TRACKS.md`, Track A.
@@ -166,7 +166,7 @@ Expected result, Acceptance criteria, How to test.
 
 ---
 
-## Research (10)
+## Research (5)
 
 36. **[Research] Face-reference conditioning evaluation** — `research`, `character-consistency`. Compare IPAdapter-FaceID / InstantID / PuLID for this pipeline's specific constraints (6GB-class GPU, SDXL Lightning's few-step regime). Contributions welcome as benchmarks/writeups, not only code.
 37. **[Research] Character consistency benchmark** — `research`, `character-consistency`. A reproducible prompt set + scoring method so different identity-preservation approaches can be compared objectively.

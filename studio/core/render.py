@@ -11,9 +11,10 @@ complete pipeline):
   prototype that used it (see config.toml's own note on this — it was
   not universal across all of them).
 - another prototype's PIL ratio-compare-and-center-crop math (make_photo()).
-- another prototype's zoompan formulas (zoom-in/out, pan-left/right),
-  reused as-is and selected deterministically by shot index (not
-  randomly) for shot-to-shot variety.
+- two other prototypes' zoompan formulas (one supplied zoom-in/out, a
+  different one supplied pan-left/right), reused as-is and selected
+  deterministically by shot index (not randomly) for shot-to-shot
+  variety.
 - another prototype's -f concat demuxer pattern for the final assembly.
 
 Face-aware crop is new: one of those earlier prototypes never actually

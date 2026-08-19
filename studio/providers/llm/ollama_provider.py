@@ -72,9 +72,11 @@ class OllamaProvider:
 if __name__ == "__main__":
     import argparse
 
+    from providers._config_utils import default_ollama_model
+
     parser = argparse.ArgumentParser(description="Send one prompt to the local Ollama model")
     parser.add_argument("prompt")
-    parser.add_argument("--model", default="qwen3:8b")
+    parser.add_argument("--model", default=default_ollama_model())
     parser.add_argument("--system", default=None)
     args = parser.parse_args()
 

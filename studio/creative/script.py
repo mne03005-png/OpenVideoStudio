@@ -67,24 +67,16 @@ def generate_script(
 if __name__ == "__main__":
     import argparse
     import json
-    import tomllib
-    from pathlib import Path
 
+    from providers._config_utils import default_ollama_model
     from providers.llm.ollama_provider import OllamaProvider
-
-    def _default_ollama_model() -> str:
-        # config.toml's [providers] comment: "never hardcode it in
-        # creative/*.py" — read it instead of a literal default.
-        config_path = Path(__file__).resolve().parent.parent / "config.toml"
-        data = tomllib.loads(config_path.read_text(encoding="utf-8"))
-        return data.get("providers", {}).get("ollama_model", "qwen3:8b")
 
     parser = argparse.ArgumentParser(description="Generate a script from a prompt")
     parser.add_argument("prompt")
     parser.add_argument("--duration", type=float, default=15.0)
     parser.add_argument("--style", default="cinematic sci-fi")
     parser.add_argument("--language", default="en")
-    parser.add_argument("--model", default=_default_ollama_model())
+    parser.add_argument("--model", default=default_ollama_model())
     args = parser.parse_args()
 
     llm = OllamaProvider(model=args.model)

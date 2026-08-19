@@ -4,8 +4,11 @@ Current-state audit of this repository, built by selectively copying
 source and tests out of a private development workspace (not a history
 export of it — see `docs/PUBLIC_REPOSITORY_PLAN.md`). This document
 describes what's true of the working tree **right now**, verified by
-direct inspection, not a log of every fix that got it here — the
-project's commit history is the record of that, if you want it.
+direct inspection — not a log of every fix that got it here. This
+repository's git history is intentionally a single clean commit, not a
+step-by-step record of the preparation process; that process happened in
+the private development workspace this candidate was built from, and
+isn't reproduced in either the public tree or its history.
 
 **A note on how this document is written, and why:** earlier drafts of
 this document repeatedly quoted the specific private information they
@@ -74,10 +77,13 @@ audit that ships with the code it audits.
 ## Independent review
 
 This document and the repository it describes have been through multiple
-rounds of independent review by a separate reviewer with no access to
-this document's claims in advance, including review specifically of
-*this document's own accuracy* — not just the code. That process is what
-found and corrected the self-referential leaks and stale claims an
-earlier version of this document had. Treat any specific claim above as
-something you can and should re-verify yourself against the actual
-repository state, not as a final word.
+rounds of independent review: a separate reviewer reads what this
+project's own status notes claim, then re-derives every claim
+independently against the actual repository — reading the real files,
+running real commands, checking real `git log` output — rather than
+accepting the notes' narrative, including review specifically of *this
+document's own accuracy*, not just the code. That process is what found
+and corrected the self-referential leaks and stale claims earlier
+versions of this document had, more than once. Treat any specific claim
+above as something you can and should re-verify yourself against the
+actual repository state, not as a final word.
