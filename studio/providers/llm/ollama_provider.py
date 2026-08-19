@@ -2,8 +2,14 @@
 default V0.1 provider so the first runnable version of OpenVideoStudio
 doesn't require anyone to pay for anything.
 
-model is read from config (ollama_model), never hardcoded here — swapping
-qwen3:8b for a different local model is a config change, not a code change.
+callers are expected to pass model= explicitly, read from config.toml's
+ollama_model (see creative/pipeline.py's _default_ollama_model() and
+providers/_config_utils.py) — swapping qwen3:8b for a different local
+model is meant to be a config change, not a code change in creative/*.py.
+This class's own constructor default is only a low-level fallback for a
+caller that doesn't supply one, the same way any class's default
+argument is a fallback, not a claim that the value is never a literal
+anywhere.
 
 keep_alive=0 tells Ollama to unload the model immediately after each
 response, which is the mechanism behind "release LLM resources where
@@ -72,15 +78,16 @@ class OllamaProvider:
 if __name__ == "__main__":
     import argparse
 
-    from providers._config_utils import default_ollama_model
+    from providers._config_utils import default_ollama_model, default_ollama_server
 
     parser = argparse.ArgumentParser(description="Send one prompt to the local Ollama model")
     parser.add_argument("prompt")
     parser.add_argument("--model", default=default_ollama_model())
+    parser.add_argument("--server", default=default_ollama_server())
     parser.add_argument("--system", default=None)
     args = parser.parse_args()
 
-    provider = OllamaProvider(model=args.model)
+    provider = OllamaProvider(model=args.model, server=args.server)
     if not provider.is_available():
         raise SystemExit(f"Ollama is not reachable at {provider.server} — is it installed and running?")
     print(provider.generate(args.prompt, args.system))

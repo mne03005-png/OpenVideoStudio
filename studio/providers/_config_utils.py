@@ -12,6 +12,7 @@ from pathlib import Path
 
 _CONFIG_PATH = Path(__file__).resolve().parent.parent / "config.toml"
 _FALLBACK_MODEL = "qwen3:8b"
+_FALLBACK_SERVER = "http://127.0.0.1:11434"
 
 
 def default_ollama_model() -> str:
@@ -20,3 +21,11 @@ def default_ollama_model() -> str:
     except FileNotFoundError:
         return _FALLBACK_MODEL
     return data.get("providers", {}).get("ollama_model", _FALLBACK_MODEL)
+
+
+def default_ollama_server() -> str:
+    try:
+        data = tomllib.loads(_CONFIG_PATH.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return _FALLBACK_SERVER
+    return data.get("providers", {}).get("ollama_server", _FALLBACK_SERVER)

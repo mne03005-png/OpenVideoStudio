@@ -33,3 +33,21 @@ def test_default_ollama_model_falls_back_when_unset(tmp_path, monkeypatch):
 def test_default_ollama_model_falls_back_when_config_missing(tmp_path, monkeypatch):
     monkeypatch.setattr(_config_utils, "_CONFIG_PATH", tmp_path / "does_not_exist.toml")
     assert _config_utils.default_ollama_model() == "qwen3:8b"
+
+
+def test_default_ollama_server_reads_config_toml(tmp_path, monkeypatch):
+    """Bug: the three standalone CLIs read the configured model but still
+    constructed OllamaProvider without passing server=, so a non-default
+    ollama_server in config.toml was silently ignored by these debug
+    entrypoints even after the model-default fix."""
+    config_path = tmp_path / "config.toml"
+    config_path.write_text('[providers]\nollama_server = "http://127.0.0.1:9999"\n', encoding="utf-8")
+    monkeypatch.setattr(_config_utils, "_CONFIG_PATH", config_path)
+    assert _config_utils.default_ollama_server() == "http://127.0.0.1:9999"
+
+
+def test_default_ollama_server_falls_back_when_unset(tmp_path, monkeypatch):
+    config_path = tmp_path / "config.toml"
+    config_path.write_text("[providers]\n", encoding="utf-8")
+    monkeypatch.setattr(_config_utils, "_CONFIG_PATH", config_path)
+    assert _config_utils.default_ollama_server() == "http://127.0.0.1:11434"

@@ -68,7 +68,7 @@ if __name__ == "__main__":
     import argparse
     import json
 
-    from providers._config_utils import default_ollama_model
+    from providers._config_utils import default_ollama_model, default_ollama_server
     from providers.llm.ollama_provider import OllamaProvider
 
     parser = argparse.ArgumentParser(description="Generate a script from a prompt")
@@ -77,8 +77,9 @@ if __name__ == "__main__":
     parser.add_argument("--style", default="cinematic sci-fi")
     parser.add_argument("--language", default="en")
     parser.add_argument("--model", default=default_ollama_model())
+    parser.add_argument("--server", default=default_ollama_server())
     args = parser.parse_args()
 
-    llm = OllamaProvider(model=args.model)
+    llm = OllamaProvider(model=args.model, server=args.server)
     result = generate_script(llm, args.prompt, args.duration, args.style, args.language)
     print(json.dumps(result, ensure_ascii=False, indent=2))

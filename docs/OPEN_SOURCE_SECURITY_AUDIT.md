@@ -5,10 +5,14 @@ source and tests out of a private development workspace (not a history
 export of it — see `docs/PUBLIC_REPOSITORY_PLAN.md`). This document
 describes what's true of the working tree **right now**, verified by
 direct inspection — not a log of every fix that got it here. This
-repository's git history is intentionally a single clean commit, not a
-step-by-step record of the preparation process; that process happened in
-the private development workspace this candidate was built from, and
-isn't reproduced in either the public tree or its history.
+repository's git history is a deliberately curated release-preparation
+history, not the private workspace's own step-by-step development
+history — that process happened elsewhere and isn't reproduced here.
+Run `git log --all` yourself to see the current, exact history rather
+than trusting a commit count in this document, which — as an earlier
+draft of this exact sentence demonstrated by going stale within one
+commit of being written — is guaranteed to be wrong again the next time
+anything here changes.
 
 **A note on how this document is written, and why:** earlier drafts of
 this document repeatedly quoted the specific private information they
