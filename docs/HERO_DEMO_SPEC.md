@@ -1,11 +1,18 @@
 # Hero Demo Specification
 
-**Status: flagship demo produced.** See `examples/hero_demo/` — a real,
-unedited run of this repository's own pipeline, meeting the requirements
-checklist below (verified against the actual output, not assumed). Full
-provenance and an honest QC note (one scene was regenerated for quality,
-disclosed in detail) in `examples/hero_demo/README.md`. The two secondary
-demos below are still spec-only — not generated, real remaining work.
+**Status: flagship demo produced, and honestly evaluated — it does not
+meet every requirement below.** See `examples/hero_demo/` — a real,
+unedited run of this repository's own pipeline, checked against the
+requirements checklist below with the actual output, not assumed. Five of
+six requirements are met; the "demonstrates continuity" requirement is
+**not** met (real, visible facial/hair-identity drift across scenes — see
+the checklist and `examples/hero_demo/README.md`'s QC notes for the full,
+specific account) and is checked as failing rather than glossed over.
+This is shipped anyway because the drift is itself an honest, useful
+demonstration of a known limitation (Track C) rather than a defect
+worth hiding, and regenerating isn't likely to fix a systemic pipeline
+characteristic. The two secondary demos below are still spec-only — not
+generated, real remaining work.
 
 ## Why this matters
 
@@ -54,20 +61,31 @@ and two seconds of result undersells the product as much as the reverse).
 **Requirements checklist, verified against the actual `examples/hero_demo/` output:**
 - [x] Visually strong — strong first frame (astronaut walking toward
       camera down a lit corridor), no broken/garbled frames across all 6
-      keyframes. One real low-motion moment on the first attempt at the
-      final scene was caught and addressed by regenerating that scene
-      with the pipeline's real scene-regeneration mechanism — disclosed
-      in full in `examples/hero_demo/README.md`'s QC notes, not hidden.
+      keyframes individually. One real low-motion moment on the first
+      attempt at the final scene was caught and addressed by regenerating
+      that scene with the pipeline's real scene-regeneration mechanism —
+      disclosed in full in `examples/hero_demo/README.md`'s QC notes, not
+      hidden, including that the fix is a real improvement but not a
+      complete one.
 - [x] Understandable with sound off — every scene has an on-screen
       subtitle caption; no stage requires narration to follow
-- [x] Demonstrates continuity — wardrobe (white/red/blue suit) and
-      environment palette (silver/blue metallic corridors) hold clearly
-      across all 6 scenes; `storyboard.json`'s
-      `narrative_quality_warnings: []` confirms no detected continuity
-      breaks at the narrative level either
-- [x] Credible — the QC note above *is* the credibility mechanism: a real
-      adherence limitation was hit and disclosed, not edited around
-      silently
+- [ ] Demonstrates continuity — **does not meet this bar, and is checked
+      as such rather than papered over.** Direct comparison of all 6
+      keyframes shows real facial/hair-identity drift scene to scene
+      (different hair color and facial structure in several scenes) and
+      wardrobe accents that shift rather than stay fixed. What holds is
+      looser: a broadly similar "person in a white spacesuit in a
+      silver-blue station" aesthetic, not precise character continuity.
+      `narrative_quality_warnings: []` reflects narrative-level soft-QC
+      (duplicate purposes, missing continuity notes) only — it doesn't
+      and can't validate visual facial identity, and isn't evidence that
+      continuity holds. Full detail in `examples/hero_demo/README.md`'s
+      QC notes.
+- [x] Credible — specifically *because* of the item above: the identity
+      drift and the scene-6 motion limitation are both disclosed in
+      direct, specific detail rather than glossed over. A skeptical
+      developer reading `examples/hero_demo/README.md` sees exactly what
+      an independent review of this exact demo would also find.
 - [x] Shareable as a standalone clip — subtitles make it self-explanatory
       without the README's surrounding text
 - [x] Exportable — `final.mp4` (H.264/AAC, 9:16) plus a compact

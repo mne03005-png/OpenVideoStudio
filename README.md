@@ -16,9 +16,14 @@ below. Everything else in the pipeline runs on your own hardware.*
 *"Echoes of Home" — generated end-to-end from a single prompt: script →
 storyboard → character/environment identity → 6 keyframes → 6 video
 clips → narration → subtitles → automated edit. 2× speed above; full
-32.9s video and complete provenance (prompt, models, an honestly disclosed
-QC note) in [`examples/hero_demo/`](examples/hero_demo/). Not a mockup —
-this is the actual pipeline, unedited.*
+32.9s video and complete provenance (prompt, models) in
+[`examples/hero_demo/`](examples/hero_demo/). Not a mockup — this is the
+actual pipeline, unedited. **Worth knowing:** this particular run's
+character identity visibly drifts across scenes (hair/face aren't fully
+consistent) — a real, disclosed instance of the gap
+[Track C](docs/COMMUNITY_TRACKS.md#track-c--character-consistency) exists
+to close, not something we edited around. Full account in
+[`examples/hero_demo/README.md`](examples/hero_demo/README.md).*
 
 ## What it does
 

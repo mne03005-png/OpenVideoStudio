@@ -59,17 +59,41 @@ commit.
   different seeds using the pipeline's real, documented scene-level
   regeneration mechanism (edit `storyboard.json`, clear the scene's
   `clip_path`, rerun with `force=True`) — all three real pipeline
-  outputs, no synthetic frames. The clip actually used shows genuine
-  motion (the astronaut turning toward the window) and is what ships in
-  `final.mp4`. This is disclosed here specifically so "we regenerated a
-  scene for demo quality" isn't confused with "we faked a scene" — every
-  frame in `final.mp4` came out of the real pipeline; this note exists so
-  that distinction is never in question.
-- Wardrobe/palette continuity holds clearly across all 6 keyframes (the
-  white/red/blue suit, the corridor's silver/blue palette). Detailed
-  facial-identity continuity is present but, consistent with this
-  project's own documented limitations, weaker than the wardrobe/palette
-  continuity — see `docs/COMMUNITY_TRACKS.md` Track C.
+  outputs, no synthetic frames. The clip actually used shows real,
+  visible motion in roughly its first half (the astronaut turning from
+  facing camera to facing the window) and is a genuine improvement over
+  the original attempt — **but it is not fully dynamic for its whole
+  length**: after the turn completes, the shot settles into a held final
+  pose for its last second or so, which independent review of this exact
+  clip correctly flagged as still-present low motion. The honest
+  characterization is "a real motion beat followed by a brief settle,"
+  not "fully solved" — every frame in `final.mp4` came from the real
+  pipeline either way; this note exists so neither the improvement nor
+  its limits are overstated.
+- **Character/environment identity does not hold well across scenes in
+  this run — this is a real, visible instance of a known, unsolved
+  limitation, not a minor detail.** Comparing all 6 keyframes directly:
+  hair color and style change scene to scene (silver-cropped in scene 1,
+  dark brown in scene 2, pale blue-toned in scene 3, near-white in scene
+  4, dirty-blonde in scene 5), facial structure is visibly not the same
+  person across several scenes, and even the suit's specific accent
+  colors/placement shift (red/blue striped patches vs. a plain red collar
+  vs. a blue shoulder patch vs. red diagonal straps) rather than staying
+  fixed. What *does* hold, loosely: every scene shows a person in a
+  predominantly white spacesuit in a metallic/silver-blue space-station
+  environment — a broad aesthetic consistency, not a precise
+  identity-continuity one. `storyboard.json`'s `narrative_quality_warnings: []`
+  reflects the *narrative* soft-QC (duplicate purposes, missing
+  continuity notes) finding nothing — it does not and cannot validate
+  visual facial identity, and shouldn't be read as having done so. This
+  demo is, honestly, real evidence for why Track C (Character
+  Consistency) exists as an open research track: today's prompt-text-only
+  identity approach (generate the description once, reuse the same text
+  every scene) keeps the *words* every scene's prompt receives identical,
+  but SDXL Lightning at low step counts does not reliably turn identical
+  words into a visually identical face across independent generations.
+  See `docs/COMMUNITY_TRACKS.md` Track C for what a real fix (reference-image
+  conditioning) would need.
 
 ## Reproducing this
 
@@ -90,5 +114,8 @@ print(run_dir)
 
 Output won't be pixel-identical (the LLM and image/video models aren't
 seeded for exact reproducibility across runs), but should be structurally
-the same: a 6-ish-scene video with a consistent astronaut character in a
-space-station environment.
+the same: a 6-ish-scene video following an astronaut character through a
+space-station environment. Whether the character's specific appearance
+holds together better or worse than this run's is exactly the kind of
+variance the QC notes above are honest about — don't expect a
+reproduction to fix that on its own.

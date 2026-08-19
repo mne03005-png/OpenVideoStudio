@@ -48,7 +48,7 @@ what each level of relationship looks like:
 | **Supporter** | Individuals who use the project and want to say thanks | Name/handle listed in a sponsors section (opt-in) |
 | **Contributor Supporter** | Individuals who both contribute code/docs *and* sponsor | Same recognition as Supporter — contribution and sponsorship are tracked and credited separately, never combined into extra influence |
 | **Project Sponsor** | Small companies/teams using OpenVideoStudio, who want to fund its continued development | Logo/name on the README's sponsors section, priority (not exclusive) attention on issues they report |
-| **Organization Sponsor** | Larger companies/institutions with a sustained interest (e.g. building on the Model Gateway track for internal deployment) | Same as Project Sponsor, plus a direct line to discuss roadmap *input* — explicitly not roadmap *control*, see below |
+| **Organization Sponsor** | Larger companies/institutions with a sustained interest (e.g. building on the Model Gateway track for internal deployment) | Same as Project Sponsor — no additional access beyond that; roadmap input happens the same way it does for any community member, in a public Discussion, see below |
 
 ## What sponsorship never buys
 

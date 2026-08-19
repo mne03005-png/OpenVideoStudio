@@ -13,8 +13,11 @@ updated as we investigate and fix.
 
 ## Scope
 
-This project runs entirely local models against locally-running services
-(Ollama, ComfyUI) by default. Relevant security surface includes:
+This project runs local models against locally-running services (Ollama,
+ComfyUI) by default for script/storyboard/image/video generation; the
+default narration provider (Edge TTS) is a cloud call — see `README.md`'s
+"Local by default, with one disclosed exception" section. Relevant
+security surface includes:
 
 - Anything that could read/write files outside the intended run/output
   directories

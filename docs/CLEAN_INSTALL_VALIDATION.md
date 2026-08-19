@@ -20,15 +20,21 @@ substitute for the fully clean-machine test still outstanding.
   `.env`) stripped before testing — as close to "what a clone actually
   contains" as a same-machine copy can get.
 - Python environment: a brand new `python -m venv`, created fresh for
-  this test — no dependency, cache, or package already installed from any
-  other environment on this machine could mask a real install problem.
+  this test — no dependency or package already *installed* in any other
+  environment on this machine could mask a real install problem. This
+  does **not** mean pip's own download cache was bypassed: a fresh venv
+  isolates installed site-packages, not pip's cache directory, and this
+  run wasn't done with `--no-cache-dir` or a cleared cache — so it
+  doesn't independently prove a from-scratch package *download* would
+  succeed, only that a from-scratch *install into an empty environment*
+  did.
 
 ## Results
 
 | Step | Result | Evidence |
 |---|---|---|
 | Fresh venv creation | **PASS** | `python -m venv clean_venv` succeeded |
-| `pip install -r requirements.txt` | **PASS** | Clean install into the empty venv — every dependency resolved and installed with zero pre-existing cache to hide a resolution failure |
+| `pip install -r requirements.txt` | **PASS** | Clean install into the empty venv — every dependency resolved and installed with no pre-existing *installed* package to hide a resolution failure (pip's own download cache was not cleared for this run — see note above) |
 | FFmpeg detection | **PASS** | `ffmpeg -encoders` confirms `h264_nvenc`/`hevc_nvenc`/`av1_nvenc` present |
 | `.env` → `COMFYUI_ROOT` reaching the code | **PASS** | `ComfyClient().comfy_root` resolved to the configured value, read through the actual `providers._comfy_client` module, not reimplemented for the test |
 | Ollama connection | **PASS** | `OllamaProvider(...).is_available()` returned `True` against a live local server, through the actual provider class |

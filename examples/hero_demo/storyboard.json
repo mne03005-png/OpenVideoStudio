@@ -20,11 +20,11 @@
       "subtitle_text": "Alone in the silence of the station",
       "description": "A lone astronaut floats through the dimly lit corridors of an abandoned space station, their breath visible in the cold air.",
       "duration_seconds": 5.6571428571428575,
-      "keyframe_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\keyframes\\scene_01.png",
+      "keyframe_path": "keyframes/scene_01.png",
       "keyframe_seed": 1,
       "clip_freeze_seconds": 0.0,
-      "clip_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\clips\\scene_01.mp4",
-      "narration_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\narration\\scene_01.mp3",
+      "clip_path": "clips/scene_01.mp4",
+      "narration_path": "narration/scene_01.mp3",
       "narration_duration": 6.144,
       "narration_word_timings": [
         [
@@ -54,11 +54,11 @@
       "subtitle_text": "Earth shines like a distant promise",
       "description": "They pass a reflective window, revealing Earth in the distance, glowing softly under the sun.",
       "duration_seconds": 6.014285714285714,
-      "keyframe_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\keyframes\\scene_02.png",
+      "keyframe_path": "keyframes/scene_02.png",
       "keyframe_seed": 2,
       "clip_freeze_seconds": 0.0,
-      "clip_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\clips\\scene_02.mp4",
-      "narration_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\narration\\scene_02.mp3",
+      "clip_path": "clips/scene_02.mp4",
+      "narration_path": "narration/scene_02.mp3",
       "narration_duration": 5.904,
       "narration_word_timings": [
         [
@@ -88,11 +88,11 @@
       "subtitle_text": "The astronaut reaches out",
       "description": "The astronaut reaches for a flickering control panel, trying to activate a dormant system.",
       "duration_seconds": 4.228571428571429,
-      "keyframe_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\keyframes\\scene_03.png",
+      "keyframe_path": "keyframes/scene_03.png",
       "keyframe_seed": 3,
       "clip_freeze_seconds": 0.0,
-      "clip_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\clips\\scene_03.mp4",
-      "narration_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\narration\\scene_03.mp3",
+      "clip_path": "clips/scene_03.mp4",
+      "narration_path": "narration/scene_03.mp3",
       "narration_duration": 5.376,
       "narration_word_timings": [
         [
@@ -122,11 +122,11 @@
       "subtitle_text": "Echoes of missions long past",
       "description": "They float past a row of dormant pods, each one silently holding the remnants of past missions.",
       "duration_seconds": 5.3,
-      "keyframe_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\keyframes\\scene_04.png",
+      "keyframe_path": "keyframes/scene_04.png",
       "keyframe_seed": 4,
       "clip_freeze_seconds": 0.0,
-      "clip_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\clips\\scene_04.mp4",
-      "narration_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\narration\\scene_04.mp3",
+      "clip_path": "clips/scene_04.mp4",
+      "narration_path": "narration/scene_04.mp3",
       "narration_duration": 5.76,
       "narration_word_timings": [
         [
@@ -156,11 +156,11 @@
       "subtitle_text": "A distant light flickers",
       "description": "The astronaut spots a faint light pulsing from a faraway corridor, hinting at a possible path forward.",
       "duration_seconds": 4.942857142857143,
-      "keyframe_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\keyframes\\scene_05.png",
+      "keyframe_path": "keyframes/scene_05.png",
       "keyframe_seed": 5,
       "clip_freeze_seconds": 0.0,
-      "clip_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\clips\\scene_05.mp4",
-      "narration_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\narration\\scene_05.mp3",
+      "clip_path": "clips/scene_05.mp4",
+      "narration_path": "narration/scene_05.mp3",
       "narration_duration": 4.776,
       "narration_word_timings": [
         [
@@ -190,12 +190,12 @@
       "subtitle_text": "The astronaut drifts toward the light",
       "description": "They drift toward the light, their silhouette framed against the vastness of space and Earth.",
       "duration_seconds": 4.942857142857143,
-      "keyframe_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\keyframes\\scene_06.png",
+      "keyframe_path": "keyframes/scene_06.png",
       "keyframe_seed": 6,
       "clip_retry_seed": 90006,
       "clip_freeze_seconds": 0.0,
-      "clip_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\clips\\scene_06.mp4",
-      "narration_path": "D:\\OpenVideoStudio\\studio\\runs\\create_20260819_221947\\narration\\scene_06.mp3",
+      "clip_path": "clips/scene_06.mp4",
+      "narration_path": "narration/scene_06.mp3",
       "narration_duration": 4.896,
       "narration_word_timings": [
         [
