@@ -39,8 +39,12 @@ here, since this document has previously gone stale between updates.
       `examples/hero_demo/` (32.9s final video + compact preview GIF
       embedded in both READMEs), full requirements checklist verified
       against the actual output in `docs/HERO_DEMO_SPEC.md`, including an
-      honestly disclosed QC judgment call (one scene regenerated via the
-      pipeline's real scene-regeneration mechanism, not hand-edited).
+      honestly disclosed QC judgment call (one scene's clip regenerated
+      via direct calls to the pipeline's own video-provider class with
+      manually-chosen seeds, then reassembled with the pipeline's real
+      final-edit function — real pipeline components throughout, not
+      hand-edited frames; exact mechanism in
+      `examples/hero_demo/README.md`'s QC notes).
       Two secondary demos remain spec-only — real, scoped, not generated.
 - [x] Install guide written and verified against a fresh copy of the
       repository, including: `.env` values actually reach the code,

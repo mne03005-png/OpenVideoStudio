@@ -55,12 +55,29 @@ commit.
   documented before (see `docs/COMMUNITY_TRACKS.md` Track G's "final-video
   freeze QC" gap: today's QC checks raw pre-retime clips, not the
   fully-assembled final video). Rather than ship that or hand-edit
-  around it, the same scene was regenerated three more times with
-  different seeds using the pipeline's real, documented scene-level
-  regeneration mechanism (edit `storyboard.json`, clear the scene's
-  `clip_path`, rerun with `force=True`) — all three real pipeline
-  outputs, no synthetic frames. The clip actually used shows real,
-  visible motion in roughly its first half (the astronaut turning from
+  around it, the same scene's keyframe was sent through the pipeline's
+  real video-provider class (`ComfyUILTXProvider.generate_video()`, the
+  exact class `creative/clips.py` calls) three more times, directly,
+  with different manually-chosen seeds. This is **not** the same thing
+  as `generate_clips()`'s own automatic retry path — that function only
+  attempts one alternate seed (`keyframe_seed + 5000`) when freeze is
+  detected, and only if that retry is actually less frozen than the
+  first attempt; trying three different seeds needed direct calls to the
+  provider instead. The best of the three (by eye, and confirmed by the
+  freeze detector) was kept, and its path and seed were recorded by hand
+  in `storyboard.json` (`clip_retry_seed: 90006` — a manually chosen
+  value, not the `+5000` formula's output, which would have been `5006`
+  for this scene). `final.mp4` was then rebuilt from the updated
+  storyboard with a direct call to `run_edit(run_dir, state,
+  force=True)` — the pipeline's real final-assembly function, forced
+  past its own already-done check. All three candidate clips are real
+  output from the real provider class, no synthetic frames — but getting
+  there was a manual seed-selection process built on top of the
+  pipeline's own components, not something the pipeline does
+  automatically on its own; an earlier version of this note described it
+  as more automatic than it actually was, and this is the corrected
+  account. The clip actually used shows real, visible motion in roughly
+  its first half (the astronaut turning from
   facing camera to facing the window) and is a genuine improvement over
   the original attempt — **but it is not fully dynamic for its whole
   length**: after the turn completes, the shot settles into a held final

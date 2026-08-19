@@ -34,15 +34,37 @@ any form.
 
 ## Findings
 
-**No secrets.** No API keys, tokens, passwords, credentials, or `.env`
-files exist anywhere in this repository. The only environment-variable
-template (`studio/.env.example`) contains commented-out placeholder names
-for future providers, with no values.
+**No secrets tracked.** No API key, token, password, or credential value
+is tracked anywhere in this repository. The only *tracked*
+environment-variable file is `studio/.env.example`, which contains
+commented-out placeholder names for future providers, with no values.
+A working checkout of this repository will typically have its own local
+`studio/.env` (`.gitignore` excludes it, and `git log -- studio/.env`
+confirms it has never been committed) — that file holds one local
+`COMFYUI_ROOT=<path>` line, a filesystem location, not a credential, and
+it never enters git history. Stating "no `.env` file exists" would have
+been a claim about someone's local disk, not about this repository; the
+claim that matters — nothing sensitive is *tracked* — holds.
 
-**No exact private identifiers.** No absolute path, username, or the
-private workspace's own name appears anywhere in this repository's
-tracked files or commit history (verified directly against `git log`,
-not by assertion).
+**No exact private identifier in tracked files at `HEAD` — and this is
+checked against git history directly, not assumed clean.** The files at
+the current commit contain no absolute path, username, or private-
+workspace name that identifies this machine or its owner, verified
+directly against `git ls-files` content. Git history is a separate
+question and gets a direct answer rather than a blanket one: an earlier
+commit in this repository's own history (`e64146d`, later superseded by
+a fix in `c12b45c`) **does** contain 18 absolute local paths in
+`examples/hero_demo/storyboard.json` — the same ones described above as
+having been rewritten to relative paths. Those paths name a run-directory
+timestamp and this project's own `...\studio\runs\...` layout; they
+contain no username and no string identifying a specific person. This
+repository's history is not rewritten to erase that — see this document's
+opening note on why it's a small, deliberately curated history rather
+than a scrubbed one — so `git log -p -- examples/hero_demo/storyboard.json`
+will show the original absolute paths in an earlier commit and the fix
+in a later one, in the open, rather than a single commit that looks
+clean because the mistake was rebased away. Verify this yourself with
+that exact command if it matters for your use case.
 
 **Generic development provenance remains, deliberately.** Several source
 files and `config.toml` note that specific parameters or logic were

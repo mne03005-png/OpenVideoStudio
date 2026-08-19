@@ -62,11 +62,14 @@ and two seconds of result undersells the product as much as the reverse).
 - [x] Visually strong — strong first frame (astronaut walking toward
       camera down a lit corridor), no broken/garbled frames across all 6
       keyframes individually. One real low-motion moment on the first
-      attempt at the final scene was caught and addressed by regenerating
-      that scene with the pipeline's real scene-regeneration mechanism —
-      disclosed in full in `examples/hero_demo/README.md`'s QC notes, not
-      hidden, including that the fix is a real improvement but not a
-      complete one.
+      attempt at the final scene was caught and addressed by generating
+      three candidate clips directly through the pipeline's own
+      video-provider class with different manually-chosen seeds (not the
+      pipeline's automatic single-retry path), manually keeping the best
+      one, and rebuilding `final.mp4` with a forced final-assembly
+      re-run — disclosed in full, exact-mechanism detail in
+      `examples/hero_demo/README.md`'s QC notes, not hidden, including
+      that the fix is a real improvement but not a complete one.
 - [x] Understandable with sound off — every scene has an on-screen
       subtitle caption; no stage requires narration to follow
 - [ ] Demonstrates continuity — **does not meet this bar, and is checked
