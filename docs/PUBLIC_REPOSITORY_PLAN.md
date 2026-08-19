@@ -50,9 +50,15 @@ OpenVideoStudio/
 │                               # current count — not stated here since
 │                               # it changes with every test added)
 ├── docs/                       # this document and its siblings
-├── examples/                   # sample prompts/config (see below)
+├── examples/
+│   └── hero_demo/               # a real, unedited pipeline run — see
+│                               # examples/hero_demo/README.md
 ├── presets/                    # empty at launch — style/preset library,
 │                               # a natural first contribution
+├── scripts/
+│   └── create_github_issues.py # parses docs/ISSUES_SEED.md, files real
+│                               # GitHub issues at launch time (dry-run
+│                               # safe by default)
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   ├── workflows/ci.yml
@@ -68,11 +74,11 @@ OpenVideoStudio/
 ├── SUPPORT.md
 ├── CHANGELOG.md
 ├── CONTRIBUTORS.md
+├── LICENSE                     # Apache License 2.0 — decided, see
+│                               # docs/LICENSE_STRATEGY.md
+├── NOTICE
 └── .gitignore
 ```
-
-`LICENSE` is deliberately **not yet present** — see `docs/LICENSE_STRATEGY.md`;
-it requires an explicit decision before it's added.
 
 Adapted from the originally sketched structure: `providers/` stays nested
 under `studio/` rather than promoted to the repo root, matching the actual

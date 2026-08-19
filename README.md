@@ -52,9 +52,9 @@ more than what's actually true today.
 
 ## Why OpenVideoStudio
 
-- **Free and open source in intent.** No account, no paywall, no usage
-  metering on the software itself — see the License section below for
-  exactly where that stands today.
+- **Free and open source.** Apache-2.0 licensed — no account, no
+  paywall, no usage metering on the software itself. See the License
+  section below for exactly what that does and doesn't cover.
 - **Local-first.** See above — everything except narration's default
   provider runs entirely on your own hardware.
 - **Consumer-GPU friendly.** Verified end-to-end on a 6GB laptop GPU (see

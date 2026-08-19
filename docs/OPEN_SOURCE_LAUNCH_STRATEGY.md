@@ -2,14 +2,16 @@
 
 ## Positioning
 
-**OpenVideoStudio** — a local-first AI video creation studio, free to
-use, open source in progress. (Not "Free & Open-Source" unqualified as
-the headline claim — an earlier draft of this exact document used that
-phrasing in three different places, and two independent review rounds
-caught it as inaccurate at the point a reader first sees it: no
-`LICENSE` currently exists, and default narration isn't local. See
-`README.md`'s actual current headline, which this document should always
-match, not just describe.)
+**OpenVideoStudio** — a local-first, Apache-2.0-licensed AI video
+creation studio. (Earlier drafts of this exact document used an
+unqualified "Free & Open-Source" headline in three different places, and
+two independent review rounds caught it as inaccurate at the point a
+reader first sees it — at the time, no `LICENSE` existed yet. The license
+is now decided and `LICENSE` is in the repository, so the headline states
+that directly; the "one disclosed exception" framing for narration/Edge
+TTS below still applies, since that hasn't changed. See `README.md`'s
+actual current headline, which this document should always match, not
+just describe.)
 
 Core workflow: Prompt → Script → Storyboard → Character/Environment
 continuity → Keyframes → AI video clips → Voice → Subtitles → Audio →
@@ -19,8 +21,8 @@ Differentiators, each backed by something real in the current codebase
 (no aspirational claims mixed in with what exists — an earlier draft of
 this exact list got two of these wrong, caught in independent review; see
 `docs/OPEN_SOURCE_SECURITY_AUDIT.md`'s note on that):
-- Free and open source in intent (License section is honest about where
-  that actually stands — see `docs/LICENSE_STRATEGY.md`)
+- Free and open source — Apache-2.0, decided and applied (see
+  `docs/LICENSE_STRATEGY.md`), not just stated as intent
 - Local-first, with one disclosed exception: script/storyboard/identity/
   keyframes/clips are all local (Ollama + ComfyUI); default narration
   (Edge TTS) is not — see `README.md`'s "Local by default" section
@@ -72,19 +74,19 @@ this exact list got two of these wrong, caught in independent review; see
    next to it, and over-indexing the README's first line on one specific
    GPU risks reading as narrower than the project actually is. Strong as
    a supporting line or as the hook for launch posts specifically (see
-   below), not as the permanent README tagline. Also needs the same
-   "open source in progress" qualification as #1 if ever used as a
-   full sentence, not just a hardware hook fragment.
+   below), not as the permanent README tagline.
 
-**What's actually shipped (`README.md`/`README_CN.md`'s real headline):**
-*"A local-first AI video creation studio — free to use, open source in
-progress."* with subhead *"From one prompt to a complete video — most of
-it never leaves your machine."* and an inline note, directly under the
-headline (not scrolled past), naming both qualifications (no `LICENSE`
-yet, one cloud TTS dependency) instead of only disclosing them later.
-Tagline #5's hardware hook remains reserved for launch post titles
-specifically, where `docs/HARDWARE.md`'s evidence sits right next to the
-claim.
+**What's actually shipped (`README.md`/`README_CN.md`'s real headline, as
+of the license decision):** *"A local-first, Apache-2.0-licensed AI video
+creation studio."* with subhead *"From one prompt to a complete video —
+most of it never leaves your machine."* and an inline note, directly
+under the headline (not scrolled past), disclosing the one remaining
+qualification (narration's Edge TTS dependency) instead of only
+disclosing it later. The license-uncertainty qualification tagline #1's
+correction was built around is now moot — Apache-2.0 is real and named
+directly in the headline instead of hedged around. Tagline #5's hardware
+hook remains reserved for launch post titles specifically, where
+`docs/HARDWARE.md`'s evidence sits right next to the claim.
 
 ## README first-30-seconds structure
 
