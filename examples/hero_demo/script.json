@@ -1,0 +1,32 @@
+{
+  "title": "Echoes of Home",
+  "logline": "A stranded astronaut drifts through the silence of a forgotten space station, chasing the light of Earth.",
+  "theme": "isolation, hope, discovery",
+  "scene_count": 6,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "description": "A lone astronaut floats through the dimly lit corridors of an abandoned space station, their breath visible in the cold air."
+    },
+    {
+      "scene_number": 2,
+      "description": "They pass a reflective window, revealing Earth in the distance, glowing softly under the sun."
+    },
+    {
+      "scene_number": 3,
+      "description": "The astronaut reaches for a flickering control panel, trying to activate a dormant system."
+    },
+    {
+      "scene_number": 4,
+      "description": "They float past a row of dormant pods, each one silently holding the remnants of past missions."
+    },
+    {
+      "scene_number": 5,
+      "description": "The astronaut spots a faint light pulsing from a faraway corridor, hinting at a possible path forward."
+    },
+    {
+      "scene_number": 6,
+      "description": "They drift toward the light, their silhouette framed against the vastness of space and Earth."
+    }
+  ]
+}

@@ -2,10 +2,15 @@
 
 Real, reproducible example runs — not fabricated sample output.
 
-This directory is populated once the hero demo (see
-`docs/HERO_DEMO_SPEC.md`) is produced and approved: the exact
-prompt/config used, plus the resulting `script.json`/`storyboard.json`
-and final video, so anyone can reproduce or study a real end-to-end run.
+## `hero_demo/`
 
-Empty at this stage on purpose — see `docs/OPEN_SOURCE_READINESS.md` for
-what's still pending before launch.
+The project's flagship demo, produced by actually running this
+repository's own pipeline against live Ollama + ComfyUI — see
+`hero_demo/README.md` for the full provenance, QC notes (including one
+disclosed judgment call about a regenerated scene), and how to reproduce
+it yourself. Spec it was built from: `docs/HERO_DEMO_SPEC.md`.
+
+Two secondary demo concepts (character continuity, environment
+continuity) are specified in `docs/HERO_DEMO_SPEC.md` but not generated
+yet — the flagship demo was the priority; the secondary demos are real,
+scoped future work, not silently dropped.

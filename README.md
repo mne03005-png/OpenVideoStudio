@@ -1,18 +1,24 @@
 # OpenVideoStudio
 
-**A local-first AI video creation studio — free to use, open source in progress.**
+**A local-first, Apache-2.0-licensed AI video creation studio.**
 From one prompt to a complete video — most of it never leaves your machine.
 
 [中文](README_CN.md) · [Install](docs/INSTALL.md) · [Roadmap](ROADMAP.md) · [Contributing](CONTRIBUTING.md)
 
-*"Open source in progress" isn't a hedge — no `LICENSE` file exists yet
-and narration currently uses one cloud service by default. Both are
-explained below, not buried. See "Local by default" and "License."*
+*One thing worth knowing up front: narration currently uses one cloud
+service by default (Edge TTS) — not buried, see "Local by default"
+below. Everything else in the pipeline runs on your own hardware.*
 
-> 🎬 **Hero demo coming soon.** The demo spec is written
-> (`docs/HERO_DEMO_SPEC.md`) and production is next — this section will
-> hold a real, unedited pipeline run once it's produced and approved.
-> We'd rather ship no demo than a misleading one.
+### 🎬 See it work
+
+![A real, unedited OpenVideoStudio run: an astronaut exploring an abandoned space station](examples/hero_demo/preview.gif)
+
+*"Echoes of Home" — generated end-to-end from a single prompt: script →
+storyboard → character/environment identity → 6 keyframes → 6 video
+clips → narration → subtitles → automated edit. 2× speed above; full
+32.9s video and complete provenance (prompt, models, an honestly disclosed
+QC note) in [`examples/hero_demo/`](examples/hero_demo/). Not a mockup —
+this is the actual pipeline, unedited.*
 
 ## What it does
 
@@ -134,11 +140,16 @@ and [`ROADMAP.md`](ROADMAP.md) for what's next. Governance model in
 
 ## License
 
-**Not yet finalized.** This repository does not currently grant an
-open-source license — no `LICENSE` file exists yet, so by default no
-usage/modification/redistribution rights are granted beyond what you see
-here. "Free & open-source" above states this project's intent and
-destination, not its present legal status. See
-[`docs/LICENSE_STRATEGY.md`](docs/LICENSE_STRATEGY.md) for the comparison
-and current recommendation (Apache-2.0); a `LICENSE` file will be added
-once that decision is made explicitly, before any public launch.
+[Apache License 2.0](LICENSE). See
+[`docs/LICENSE_STRATEGY.md`](docs/LICENSE_STRATEGY.md) for the full
+comparison against MIT/GPLv3/AGPLv3 and why Apache-2.0 was chosen — in
+short, MIT-level adoption-friendliness plus an explicit patent grant,
+which matters for a project this close to fast-moving AI/model tooling.
+Contributors sign off commits via [DCO](https://developercertificate.org/)
+(`git commit -s`) rather than a CLA — see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+The license covers this repository's code. It does not cover the
+OpenVideoStudio name, logo, or official release channels — see
+[`GOVERNANCE.md`](GOVERNANCE.md#brand-control) for how those stay
+separately protected, and why a permissive code license doesn't hand
+them away.

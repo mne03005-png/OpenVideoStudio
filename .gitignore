@@ -25,6 +25,16 @@ ComfyUI/
 # Generated run output
 studio/runs/
 
+# Hero demo source assets: the raw final.mp4 and full-resolution keyframe
+# PNGs are real, produced output (not fabricated), but too large to carry
+# in git history indefinitely — see examples/hero_demo/README.md for how
+# they get distributed instead (GitHub release/asset hosting at launch,
+# not a committed blob). The compact preview.gif and the small JSON
+# artifacts (storyboard.json, script.json) ARE committed — they're the
+# actual point of an "example" and are small.
+examples/hero_demo/final.mp4
+examples/hero_demo/keyframes/
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db

@@ -1,10 +1,10 @@
 # License Strategy
 
-**Status: NOT DECIDED. Requires explicit user approval before any license
-file is added to the repository or the repo is made public.**
-
-This document compares options and makes a recommendation. It does not
-finalize anything.
+**Status: DECIDED.** Apache-2.0 + DCO, per the recommendation below. The
+`LICENSE` and `NOTICE` files are in place in the candidate repository.
+MIT remains the documented fallback if this decision is revisited before
+launch. This still does not authorize publishing the repository —
+that's a separate, later gate (see `docs/OPEN_SOURCE_READINESS.md`).
 
 ## What we're optimizing for
 
@@ -132,10 +132,46 @@ enterprise support) without giving that up by accident.
    companies/institutions — AGPL is the single biggest deterrent to
    corporate adoption of the four options compared.
 
-## Open question requiring explicit user decision
+## Decision
 
-Apache-2.0 vs. MIT is close enough that it comes down to how much weight
-to put on patent protection vs. absolute simplicity. **This document
-recommends Apache-2.0** but the final choice, and the decision to adopt
-DCO, both require explicit user sign-off — no `LICENSE` file has been
-added to the candidate repository yet.
+**Apache-2.0, with DCO for contributor sign-off.** Apache-2.0 vs. MIT
+came down to how much weight to put on patent protection vs. absolute
+simplicity — patent protection won given this project's proximity to
+fast-moving, patent-adjacent AI/model tooling. `LICENSE` (the verbatim
+Apache License 2.0 text) and `NOTICE` (the copyright/attribution
+statement, held by "OpenVideoStudio Contributors" rather than a single
+named individual, matching common practice for community-owned projects)
+are both in the candidate repository root. `CONTRIBUTING.md`'s DCO
+sign-off requirement was already in place before this decision.
+
+**MIT remains the documented fallback** if this decision needs revisiting
+before the repository is actually made public — swapping `LICENSE`'s text
+is a low-cost, low-risk change at that point, and this document's MIT
+comparison above stays accurate either way.
+
+## A license does not protect the brand
+
+Choosing Apache-2.0 governs the *code* — copying, modifying,
+redistributing, using it commercially. It says nothing about who gets to
+call their fork "OpenVideoStudio," use its name or logo, or claim to be
+the official project. That's handled separately, deliberately not by the
+license:
+
+- The **OpenVideoStudio name, logo, official builds, official website,
+  and official release channels** stay under the Core Maintainer /
+  project organization's control — see `GOVERNANCE.md`'s "Brand control"
+  section.
+- **Organization ownership** (the eventual GitHub organization, domain,
+  and any registered trademark) is a separate, explicit decision at
+  launch time — see `docs/GITHUB_LAUNCH_SETUP.md`.
+- Anyone may fork the *code* under Apache-2.0's terms. They may not
+  present that fork as the official OpenVideoStudio project without
+  separate permission.
+
+**Legal uncertainty, marked plainly:** nothing above constitutes a formal
+trademark registration or legal opinion. "Preserving" the name/logo/brand
+today means asserting and documenting the intent, plus normal
+first-use/common-law protections that come from actually using the name
+publicly — it does not mean a registered trademark exists. If brand
+protection ever needs to be enforced against a bad-faith fork, that
+requires actual legal review at the time, not just this document.

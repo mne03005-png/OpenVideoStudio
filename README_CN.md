@@ -1,17 +1,23 @@
 # OpenVideoStudio
 
-**本地优先的 AI 视频创作工作室——免费可用，开源许可正在推进中。**
+**本地优先、采用 Apache-2.0 许可证的 AI 视频创作工作室。**
 从一句提示词，到一部完整的视频——其中大部分处理都不会离开你的机器。
 
 [English](README.md) · [安装指南](docs/INSTALL.md) · [路线图](ROADMAP.md) · [贡献指南](CONTRIBUTING.md)
 
-*"开源许可正在推进中"不是场面话：目前还没有 `LICENSE` 文件，默认的配音
-方案也会用到一个云端服务。这两点下文都会说明，不会藏着不提——见"默认本地
-运行"和"许可证"两节。*
+*有一点需要提前说明：默认的配音方案目前会用到一个云端服务（Edge
+TTS）——不会藏着不提，见下文"默认本地运行"一节。流水线的其余部分都在你
+自己的硬件上运行。*
 
-> 🎬 **主演示视频制作中。** 演示规格已经写好（`docs/HERO_DEMO_SPEC.md`），
-> 接下来会正式制作——这里只会放真实、未经剪辑美化的完整流水线运行结果。
-> 我们宁愿暂时不放演示，也不愿放一个有误导性的演示。
+### 🎬 实际效果
+
+![OpenVideoStudio 真实、未经剪辑美化的完整运行结果：一名宇航员探索一座废弃的空间站](examples/hero_demo/preview.gif)
+
+*"Echoes of Home"——从一句提示词端到端生成：剧本 → 分镜 → 角色/场景一致性
+设定 → 6 个关键帧 → 6 段视频片段 → 配音 → 字幕 → 自动剪辑合成。以上为
+2 倍速预览；完整的 32.9 秒视频和完整的生成信息（提示词、模型、如实披露
+的质检说明）见 [`examples/hero_demo/`](examples/hero_demo/)。不是模拟
+效果图——这就是真实的流水线输出，未经剪辑美化。*
 
 ## 它能做什么
 
@@ -120,8 +126,14 @@ python app.py
 
 ## 许可证
 
-**尚未最终确定。** 本仓库目前还没有正式授予开源许可——没有 `LICENSE`
-文件，因此在此之外默认不授予任何使用/修改/再分发的权利。标题中的"开源
-许可正在推进中"表达的是本项目的目标和方向，而不是当前的法律状态。比较方案与当前建议
-（Apache-2.0）见 [`docs/LICENSE_STRATEGY.md`](docs/LICENSE_STRATEGY.md)；
-`LICENSE` 文件会在该决定正式做出后、正式公开发布之前添加。
+[Apache License 2.0](LICENSE)。完整的方案比较（对比 MIT / GPLv3 /
+AGPLv3）和选择 Apache-2.0 的理由见
+[`docs/LICENSE_STRATEGY.md`](docs/LICENSE_STRATEGY.md)——简单来说：
+接近 MIT 的友好度，加上明确的专利授权条款，这对一个紧贴快速演进的
+AI/模型生态的项目来说很重要。贡献者通过
+[DCO](https://developercertificate.org/)（`git commit -s`）签署提交，
+而不是 CLA——见 [`CONTRIBUTING.md`](CONTRIBUTING.md)。
+
+许可证覆盖的是本仓库的代码，不包括 OpenVideoStudio 的名称、标志或官方
+发布渠道——这些如何单独得到保护、为什么宽松的代码许可证不等于把这些也
+一并让渡出去，见 [`GOVERNANCE.md`](GOVERNANCE.md#brand-control)。

@@ -94,6 +94,19 @@ LAUNCH"** — is checked. Nothing here authorizes publishing anything.
 See `docs/OPEN_SOURCE_LAUNCH_STRATEGY.md`'s first-week community plan for
 response SLAs, contributor recognition, and burnout avoidance.
 
+## Sponsor activation timing
+
+Deliberately **not** in the launch-hour or first-24-hours checklists
+above. `.github/FUNDING.yml` stays fully commented out (see
+`docs/SPONSORSHIP.md`) through at least the first week — activating
+sponsorship before the project has demonstrated it can sustain a
+community (responsive triage, merged first PRs, a functioning
+Discussions space) reads as asking for money before proving the thing
+being funded is real. Reasonable trigger to revisit: after the first
+week's retrospective, once there's a real answer to "what would this
+funding actually go toward right now" grounded in real triage/maintenance
+load rather than a hypothetical.
+
 ## Clean-machine install test — what "clean" means
 
 Not the development machine. A separate machine or VM with no

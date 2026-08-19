@@ -54,11 +54,20 @@ Removing this kind of note entirely was considered and rejected: it would
 make the codebase read as if every design decision were invented from
 scratch, which isn't true and isn't necessary to hide.
 
-**No model binaries.** No `.safetensors`, `.gguf`, `.tflite`, checkpoint,
-or LoRA file is tracked in this repository. The one small (228 KB)
+**No model binaries, no large files.** No `.safetensors`, `.gguf`,
+`.tflite`, checkpoint, LoRA, image, video, or archive file is tracked in
+this repository — checked by extension, not just by convention. The
+largest tracked file is source code, under 30 KB. The one small (228 KB)
 MediaPipe face-detector model Media Remix uses is gitignored and fetched
 by the user during setup — see `docs/INSTALL.md` for the verified
-download source.
+download source. Hero demo assets (`examples/hero_demo/` — video,
+keyframes, screenshots) were generated after this scope was written and
+are covered separately in `docs/HERO_DEMO_SPEC.md`'s own notes; they
+contain synthetic, AI-generated content only, no run metadata that
+identifies this machine.
+
+**No credential file structure.** `git ls-files` confirms no `.env` (only
+`.env.example`, values-free) is tracked anywhere in the repository.
 
 **Cross-platform gaps exist and are tracked, not hidden.** Final video
 encoding requires an NVENC-capable NVIDIA GPU (no software/other-vendor

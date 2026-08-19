@@ -1,9 +1,15 @@
 # Governance
 
-OpenVideoStudio is **community-driven, maintainer-led**. Anyone can
-contribute; repository permissions and decision-making authority are
-earned progressively through sustained, high-quality contribution — they
-are never for sale, and a PR by itself never grants control.
+OpenVideoStudio is **community-driven, maintainer-led**. Anyone can open
+an issue, start a discussion, fork the repository, or submit a PR — no
+approval needed to participate. What you can't do on day one is merge
+code or set direction unilaterally, and that's by design, not
+gatekeeping: repository permissions and decision-making authority are
+earned progressively through sustained, high-quality contribution. They
+are never for sale, and a single PR — however good — never grants
+ownership or control on its own. The path from "found a bug" to
+"reviews other people's PRs" is meant to be real and walkable, not a
+formality that only insiders complete.
 
 ## Roles
 
@@ -20,6 +26,13 @@ time, review quality (for Reviewer+), technical judgment, community
 conduct, and long-term involvement. There's no fixed PR count or time
 threshold — this is a judgment call made transparently, not a formula, and
 maintainers should be able to explain their reasoning if asked.
+
+**Technical decisions are made in the open.** Design discussions happen in
+GitHub Discussions or PR threads, not private channels, specifically so
+any contributor — not just current Maintainers — can see the reasoning
+behind a decision and weigh in on it. See `CONTRIBUTING.md`'s
+"Recognition" section for how contribution turns into visible credit,
+separately from the role promotions on this page.
 
 ## Who can do what
 
