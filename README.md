@@ -1,5 +1,28 @@
 # OpenVideoStudio
 
+
+## 🎬 Demo Videos
+
+### Founder Story
+
+Why I built OpenVideoStudio:
+
+I couldn't afford expensive AI video tools, so I built my own open-source AI studio.
+
+▶️ Watch:
+https://youtu.be/XKSgOEAzpeE
+
+
+### Technical Overview
+
+A developer-focused overview of the OpenVideoStudio pipeline.
+
+▶️ Watch:
+https://youtu.be/8VCze8sYlVg
+
+
+---
+
 **A local-first, Apache-2.0-licensed AI video creation studio.**
 From one prompt to a complete video — most of it never leaves your machine.
 
