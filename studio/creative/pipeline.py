@@ -172,7 +172,10 @@ def run_script(run_dir: Path, state: CreativeRunState, force: bool = False) -> C
     try:
         llm = get_provider("llm", _provider_name("llm", "ollama"), model=state.llm_model, server=_ollama_server())
         if not llm.is_available():
-            raise RuntimeError("Ollama is not reachable — is it installed and running?")
+            raise RuntimeError(
+                f"Ollama is not reachable at {llm.server} — is it installed and running? "
+                "Check [providers].ollama_server in config.toml."
+            )
         script = generate_script(llm, state.prompt, state.target_duration_seconds, state.style, state.language)
         (run_dir / "script.json").write_text(json.dumps(script, ensure_ascii=False, indent=2), encoding="utf-8")
         qc = {"scene_count": len(script["scenes"]), "title": script.get("title")}

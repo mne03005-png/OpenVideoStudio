@@ -74,6 +74,32 @@ def test_provider_name_falls_back_to_default_when_unset(tmp_path, monkeypatch):
     assert pipeline._provider_name("video", "comfyui_ltx") == "comfyui_ltx"
 
 
+def test_run_script_reports_ollama_server_and_config_when_unreachable(tmp_path, monkeypatch):
+    """First-run connection failures must tell users which configured URL to fix."""
+    configured_server = "http://127.0.0.1:11435"
+    config_path = tmp_path / "config.toml"
+    config_path.write_text(
+        f'[providers]\nollama_server = "{configured_server}"\n', encoding="utf-8"
+    )
+    monkeypatch.setattr(pipeline, "_CONFIG_PATH", config_path)
+
+    class UnavailableLLM:
+        server = configured_server
+
+        def is_available(self):
+            return False
+
+    monkeypatch.setattr(pipeline, "get_provider", lambda *args, **kwargs: UnavailableLLM())
+    state = pipeline.new_run(tmp_path / "runs", "a prompt", 15.0, "cinematic")
+    run_dir = pipeline.run_dir_for(tmp_path / "runs", state.run_id)
+
+    result = pipeline.run_script(run_dir, state)
+
+    error = result.stages["script"]["error"]
+    assert configured_server in error
+    assert "[providers].ollama_server" in error
+
+
 # --------------------------------------------------------------- extract_json ---
 def test_extract_json_plain():
     assert extract_json('{"a": 1}') == {"a": 1}
