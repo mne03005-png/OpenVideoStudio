@@ -1,8 +1,10 @@
 ---
 name: Hardware report
-about: Report a real run on hardware not yet listed in docs/HARDWARE.md
+about: Report hardware configuration, AI model runtime issues, or performance results.
 title: "[Hardware] "
-labels: ["documentation"]
+labels: hardware
+assignees: ''
+
 ---
 
 **GPU / VRAM**

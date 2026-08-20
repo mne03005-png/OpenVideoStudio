@@ -2,7 +2,9 @@
 name: Feature request
 about: Suggest an idea, or propose a community-track contribution
 title: "[Feature] "
-labels: []
+labels: ''
+assignees: ''
+
 ---
 
 **What problem does this solve?**
