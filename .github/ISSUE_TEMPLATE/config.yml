@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Usage question / setup help
-    url: https://github.com/OWNER/OpenVideoStudio/discussions/categories/help
+    url: https://github.com/mne03005-png/OpenVideoStudio/discussions/categories/help
     about: Please ask setup and "how do I" questions in Discussions, not Issues.
   - name: Security vulnerability
-    url: https://github.com/OWNER/OpenVideoStudio/security/advisories/new
+    url: https://github.com/mne03005-png/OpenVideoStudio/security/advisories/new
     about: Please report security issues privately — see SECURITY.md. Do not open a public issue.
