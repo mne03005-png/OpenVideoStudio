@@ -28,11 +28,18 @@ class ComfyClient:
         # i.e. .../ComfyUI_windows_portable/ComfyUI. Every install lives
         # somewhere different, so there's no safe default to guess: pass it
         # explicitly or set the COMFYUI_ROOT environment variable.
-        root = comfy_root or os.environ.get("COMFYUI_ROOT")
-        # Users commonly copy Windows paths into .env files, where a path can
-        # contain either separator. Normalising backslashes makes that setting
-        # work consistently when tests or launch scripts run on another OS.
-        self.comfy_root = Path(str(root).replace("\\", os.sep)) if root else None
+        if comfy_root is not None:
+            self.comfy_root = comfy_root
+        else:
+            root = os.environ.get("COMFYUI_ROOT")
+            # Environment values are strings and are commonly copied between
+            # platforms. Accept either separator without rewriting explicit
+            # Path arguments, which can contain literal backslashes on POSIX.
+            if root:
+                normalized_root = root.replace("\\", os.sep).replace("/", os.sep)
+                self.comfy_root = Path(normalized_root)
+            else:
+                self.comfy_root = None
 
     def _require_comfy_root(self) -> Path:
         if self.comfy_root is None:
