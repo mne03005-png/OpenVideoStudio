@@ -29,7 +29,10 @@ class ComfyClient:
         # somewhere different, so there's no safe default to guess: pass it
         # explicitly or set the COMFYUI_ROOT environment variable.
         root = comfy_root or os.environ.get("COMFYUI_ROOT")
-        self.comfy_root = Path(root) if root else None
+        # Users commonly copy Windows paths into .env files, where a path can
+        # contain either separator. Normalising backslashes makes that setting
+        # work consistently when tests or launch scripts run on another OS.
+        self.comfy_root = Path(str(root).replace("\\", os.sep)) if root else None
 
     def _require_comfy_root(self) -> Path:
         if self.comfy_root is None:
